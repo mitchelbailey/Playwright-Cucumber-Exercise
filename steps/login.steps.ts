@@ -9,3 +9,7 @@ Then('I should see the title {string}', async (expectedTitle) => {
 Then('I will login as {string}', async (userName) => {
   await new Login(getPage()).loginAsUser(userName);
 });
+
+Then('I should see the locked out error message as {string}', async (expectedError) => {
+  await new Login(getPage()).validateLockedOutUserMessage(expectedError);   
+});
